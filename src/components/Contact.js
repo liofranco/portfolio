@@ -53,7 +53,7 @@ const Contact = () => {
         <Section title={'contacto'} id={'contacto'}>
             <Contacts>
                 <Card className='contact'>
-                    <Name>Linkedin</Name>
+                    <Name href="https://www.linkedin.com/in/lionel-franco" target="_blank">Linkedin</Name>
                 </Card>
                 <Card className='contact'>
                     <Name href="https://github.com/liofranco" target="_blank">Github</Name>

@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import styled, { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 import { dark, light } from './themes';
+import {Helmet} from "react-helmet";
 
 function App() {
 
@@ -19,6 +20,9 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? light : dark}>
+      <Helmet>
+        <meta name="theme-color" content={theme === 'light' ? '#eeeeee' : '#1e1f20'} />
+      </Helmet>
       <Body className="App">
         <Header setTheme={setTheme} theme={theme} />
         <Hero />

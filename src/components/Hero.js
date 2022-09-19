@@ -15,7 +15,7 @@ const Container = styled.div`
     text-align: center;
 `
 
-const TextContainer = styled.div`
+const OverflowContainer = styled.div`
     overflow: hidden;
 `
 const Name = styled.h1`
@@ -28,23 +28,29 @@ const Developer = styled.h3`
     margin-bottom: 50px;
 `
 
+const ButtonContainer = styled.div`
+    display: flex;
+`
+
 const Hero = () => {
 
     useEffect(()=>{
         ScrollReveal().reveal('.name', { delay: 200, duration: 1000, distance: '200px', opacity: 1, reset: false});
         ScrollReveal().reveal('.frontend', { delay: 400, duration: 1000, distance: '200px', opacity: 1, reset: false});
-        ScrollReveal().reveal('.btn-cv', { delay: 600, duration: 1000, distance: '200px', opacity: 1, reset: false});
+        ScrollReveal().reveal('.btn-cv', { delay: 600, duration: 1500, distance: '100px', opacity: 0, reset: false});
     }, [])
 
     return (
         <Container id="hero">
-            <TextContainer>
+            <OverflowContainer>
                 <Name className="name">Lionel Franco</Name>
-            </TextContainer>
-            <TextContainer>
+            </OverflowContainer>
+            <OverflowContainer>
                 <Developer className="frontend">Frontend Developer</Developer>
-            </TextContainer>
-            <Button name={'DESCARGAR CV'} />
+            </OverflowContainer>
+            <ButtonContainer className="btn-cv">
+                <Button name={'DESCARGAR CV'}/>
+            </ButtonContainer>
         </Container>
     );
 };
