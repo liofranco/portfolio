@@ -7,6 +7,7 @@ const Container = styled.div`
     padding: 30px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 30px;
     border-top: 2px solid ${(props) => props.theme.color };
     z-index: 1000;
@@ -37,6 +38,7 @@ const Image = styled.img`
 `
 const Info = styled.div`
     width: 50%;
+    gap: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -69,15 +71,9 @@ const ProjectCard = ({proyect}) => {
         <Container>
             <Info className='project-info'>
                 <Title>{proyect.title}</Title>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                </p>
                 <Links>
-                    <Button name={'GITHUB'} href={proyect.repo} target='_blank' />
-                    <Button name={'DEPLOY'} href={proyect.deploy} target='_blank' />
+                    <Button name={'GITHUB'} href={proyect.repo}/>
+                    <Button name={'DEPLOY'} href={proyect.deploy}/>
                 </Links>
             </Info>
             <Image src={proyect.image} alt={proyect.title} className='project-image' />

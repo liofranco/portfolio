@@ -49,7 +49,7 @@ const Hero = () => {
                 <Developer className="frontend">Frontend Developer</Developer>
             </OverflowContainer>
             <ButtonContainer className="btn-cv">
-                <Button name={'DESCARGAR CV'}/>
+                <Button name={'DESCARGAR CV'} href={'/cv.pdf'}/>
             </ButtonContainer>
         </Container>
     );

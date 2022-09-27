@@ -24,16 +24,19 @@ const Navbar = styled.nav`
     justify-content: space-between;
     width: 90%;
     max-width: 1600px;
+    
+    a{
+        color: ${(props) => props.theme.color };
+    }
 
     p{
         font-weight: bold;
         font-size: 25px;
+        border: 2px solid ${(props) => props.theme.color };
+        padding: 0 5px;
         cursor: pointer;
     }
 
-    a{
-        color: ${(props) => props.theme.color };
-    }
 `
 
 const Ul = styled.ul`
