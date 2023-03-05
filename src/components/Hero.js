@@ -35,7 +35,7 @@ const ButtonContainer = styled.div`
 const Hero = () => {
 
     useEffect(()=>{
-        ScrollReveal().reveal('.name', { delay: 200, duration: 1000, distance: '200px', opacity: 1, reset: false});
+        ScrollReveal().reveal('.name', { delay: 400, duration: 1500, distance: '200px', opacity: 1, reset: false});
         ScrollReveal().reveal('.frontend', { delay: 400, duration: 1000, distance: '200px', opacity: 1, reset: false});
         ScrollReveal().reveal('.btn-cv', { delay: 600, duration: 1500, distance: '100px', opacity: 0, reset: false});
     }, [])

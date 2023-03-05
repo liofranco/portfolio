@@ -20,7 +20,8 @@ const Projects = () => {
 
     useEffect(()=>{
         ScrollReveal().reveal('.project-info', { delay: 100, distance: '200px', opacity: 0, reset: false });
-        ScrollReveal().reveal('.project-image', { delay: 200, distance: '500px', opacity: 0, origin: 'right', reset: false });
+        ScrollReveal().reveal('.project-image-reveal', { delay: 600, origin: 'bottom', duration: 2000, distance: '600px', opacity: 1, reset: false });
+        ScrollReveal().reveal('.project-image', { delay: 200, duration: 1700, scale: 1.5, opacity: 1, reset: false });
     }, [])
     
     return (

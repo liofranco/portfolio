@@ -23,24 +23,42 @@ const Container = styled.div`
     }
 
 `
+const ImageContainer = styled.div`
+    width: 50%;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: 960px) {
+        width: 100%;
+        min-height: 150px;
+    }
+`
+const ImageReveal = styled.div`
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: translateY(-600px);
+    left: 0;
+    background: ${(props) => props.theme.backgroundColor };
+`
 const Image = styled.img`
     margin-top: 20px;
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: top;
-    border: 1px solid ${(props) => props.theme.color };
-
-    @media (max-width: 420px) {
-        width: 300px;
-        height: 300px;
-    }
 `
 const Info = styled.div`
     width: 50%;
     gap: 40px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
     @media (max-width: 960px) {
         order: 2;
@@ -50,11 +68,43 @@ const Info = styled.div`
     }
 
 `
-const Title = styled.h3`
+const Title = styled.a`
+    color: ${(props) => props.theme.color };
     font-size: 60px;
+    font-weight: bold;
     text-transform: uppercase;
+    transition: all .3s;
+    cursor: pointer;
+
+    &::after{
+        content: '';
+        height: 5px;
+        width: 0%;
+        background-color: ${(props) => props.theme.color };
+        display: block;
+        transition: .5s;
+        transform: translateY(-10px);
+    }
+
+    &:hover::after{
+        content: '';
+        height: 5px;
+        width: 100%;
+        background-color: ${(props) => props.theme.color };
+        display: block;
+        transform: translateY(-10px);
+    }
+
     @media (max-width: 960px) {
         font-size: 40px;
+        &::after{
+            transform: translateY(0px);
+            height: 3px;
+        }
+        &:hover::after{
+            transform: translateY(0px);
+            height: 3px;
+        }
     }
     @media (max-width: 480px) {
         font-size: 27px;
@@ -67,16 +117,22 @@ const Links = styled.div`
 `
 
 const ProjectCard = ({proyect}) => {
+
     return (
-        <Container>
+        <Container className='project-container'>
             <Info className='project-info'>
-                <Title>{proyect.title}</Title>
+                <Title href={proyect.deploy} target='_blank'>
+                    {proyect.title}
+                </Title>
                 <Links>
                     <Button name={'GITHUB'} href={proyect.repo}/>
                     <Button name={'DEPLOY'} href={proyect.deploy}/>
                 </Links>
             </Info>
-            <Image src={proyect.image} alt={proyect.title} className='project-image' />
+            <ImageContainer>
+                <Image src={proyect.image} alt={proyect.title} className='project-image' />
+                <ImageReveal className='project-image-reveal' />
+            </ImageContainer>
         </Container>
     );
 };
