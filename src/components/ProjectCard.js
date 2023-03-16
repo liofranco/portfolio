@@ -111,6 +111,15 @@ const Title = styled.a`
         text-align: center;
     }
 `
+const Description = styled.p`
+    font-size: 20px;
+
+    @media (max-width: 480px) {
+        font-size: 15px;
+        text-align: center;
+    }
+`
+
 const Links = styled.div`
     display: flex;
     gap: 20px;
@@ -124,7 +133,7 @@ const ProjectCard = ({proyect}) => {
                 <Title href={proyect.deploy} target='_blank'>
                     {proyect.title}
                 </Title>
-                <p>{proyect.description}</p>
+                <Description>{proyect.description}</Description>
                 <Links>
                     <Button name={'GITHUB'} href={proyect.repo}/>
                     <Button name={'DEPLOY'} href={proyect.deploy}/>
