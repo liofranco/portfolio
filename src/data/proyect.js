@@ -4,7 +4,7 @@ export const proyects = [
         "image": '/img/proyecto3.jpg',
         "deploy": 'https://crypto-lf.vercel.app/',
         "repo": 'https://github.com/liofranco/crypto-wallet',
-        "description": ''
+        "description": 'Billetera cripto'
     },
     {
         "title": 'Liga Profesional',
