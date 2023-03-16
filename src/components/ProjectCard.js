@@ -124,6 +124,7 @@ const ProjectCard = ({proyect}) => {
                 <Title href={proyect.deploy} target='_blank'>
                     {proyect.title}
                 </Title>
+                <p>{proyect.description}</p>
                 <Links>
                     <Button name={'GITHUB'} href={proyect.repo}/>
                     <Button name={'DEPLOY'} href={proyect.deploy}/>
